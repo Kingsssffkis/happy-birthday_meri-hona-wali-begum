@@ -1,0 +1,114 @@
+/* Custom CSS for Muniba's Cinematic Birthday Experience */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #07010a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07010a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff2a6d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(36, 0, 25, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 42, 109, 0.3);
+}
+
+/* Perspective & 3D Flip */
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Rose Bloom Animation */
+@keyframes bloomPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px #ff2a6d); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 35px #ffd700); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 20px #ff2a6d); }
+}
+
+.rose-bloomed {
+  animation: bloomPulse 2s infinite ease-in-out;
+}
+
+/* Catch Heart Game Cursor & Animation */
+.catch-heart-btn {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  user-select: none;
+}
+
+.catch-heart-btn:active {
+  transform: scale(1.4);
+}
+
+/* Puzzle Tile */
+.puzzle-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a000e, #240019);
+  border: 1px solid rgba(255, 42, 109, 0.4);
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.puzzle-tile:hover {
+  background: #ff2a6d;
+  color: #ffffff;
+}
+
+/* Star Sky Area */
+.sky-star {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.sky-star:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 15px #ffd700);
+}
